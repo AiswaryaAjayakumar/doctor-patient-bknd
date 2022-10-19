@@ -11,6 +11,8 @@ patientRouter.use(bodyparser.urlencoded({extended:false}))
 patientRouter.use(bodyparser.json())
 
 
+
+
 patientRouter.post('/read',(req,res)=>{
 
     var patientObject=new patientModel(req.body)
@@ -30,10 +32,17 @@ patientRouter.post('/read',(req,res)=>{
 
 })
 
-patientRouter.get('/viewall',(req,res)=>{
+patientRouter.get('/viewall',async(req,res)=>{
+    try{
 
-    var result=new patientModel.find()
+        var result=await patientModel.find()
     res.json(result)
+    }
+    catch(error)
+    {
+    res.send(error)
+    }
+    
     })
     
     patientRouter.post('/search',async(req,res)=>{
@@ -58,7 +67,7 @@ patientRouter.get('/viewall',(req,res)=>{
             res.send(error)
         }
     })
-    patientRouter.post('delete',async(req,res)=>{
+    patientRouter.post('/delete',async(req,res)=>{
         
         try{
             var result= await patientModel.findByIdAndDelete({"_id":req.body._id})

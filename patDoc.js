@@ -19,10 +19,7 @@ app.use(bodyparser.json())
 app.use('/doctor',doctorRouter)
 app.use('/patient',patientRouter)
 
-app.get('/',(req,res)=>{
 
-    res.send("Welcome to website")
-})
 
 app.listen(process.env.PORT||3000,()=>{
     console.log("Server started at 3000")
