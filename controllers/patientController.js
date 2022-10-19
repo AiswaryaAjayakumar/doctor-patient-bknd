@@ -11,6 +11,9 @@ patientRouter.use(bodyparser.urlencoded({extended:false}))
 patientRouter.use(bodyparser.json())
 
 
+patientRouter.get('/',(req,res)=>{
+    res.send("Welcome to patient doctor")
+})
 
 
 patientRouter.post('/read',(req,res)=>{

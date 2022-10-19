@@ -12,6 +12,11 @@ doctorRouter.use(bodyparser.urlencoded({extended:false}))
 doctorRouter.use(bodyparser.json())
 
 
+doctorRouter.get('/',(req,res)=>{
+    res.send("Welcome to doctor page")
+})
+
+
 doctorRouter.post('/read',(req,res)=>{
 
     var doctorObject= new doctorModel(req.body)

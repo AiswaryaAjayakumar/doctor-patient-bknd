@@ -20,7 +20,6 @@ app.use('/doctor',doctorRouter)
 app.use('/patient',patientRouter)
 
 
-
 app.listen(process.env.PORT||3000,()=>{
     console.log("Server started at 3000")
 })
