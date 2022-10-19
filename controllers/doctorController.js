@@ -11,7 +11,7 @@ var doctorRouter=express.Router()
 doctorRouter.use(bodyparser.urlencoded({extended:false}))
 doctorRouter.use(bodyparser.json())
 
-doctorRouter.post('/read',(res,req)=>{
+doctorRouter.post('/read',(req,res)=>{
 
     var doctorObject= new doctorModel(req.body)
 

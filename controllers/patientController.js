@@ -30,7 +30,7 @@ patientRouter.post('/read',(req,res)=>{
 
 })
 
-patientRouter.get('/viewall',(res,req)=>{
+patientRouter.get('/viewall',(req,res)=>{
 
     var result=new patientModel.find()
     res.json(result)
@@ -47,7 +47,7 @@ patientRouter.get('/viewall',(res,req)=>{
         
         
     })
-    patientRouter.post('/edit',async(res,req)=>{
+    patientRouter.post('/edit',async(req,res)=>{
     
         try{
         
@@ -58,7 +58,7 @@ patientRouter.get('/viewall',(res,req)=>{
             res.send(error)
         }
     })
-    patientRouter.post('delete',async(res,req)=>{
+    patientRouter.post('delete',async(req,res)=>{
         
         try{
             var result= await patientModel.findByIdAndDelete({"_id":req.body._id})

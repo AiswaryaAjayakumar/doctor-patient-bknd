@@ -19,7 +19,7 @@ app.use(bodyparser.json())
 app.use('/doctor',doctorRouter)
 app.use('/patient',patientRouter)
 
-app.get('/',(res,req)=>{
+app.get('/',(req,res)=>{
 
     res.send("Welcome to website")
 })
