@@ -12,7 +12,7 @@ patientRouter.use(bodyparser.json())
 
 
 patientRouter.get('/',(req,res)=>{
-    res.send("Welcome to patient doctor")
+    res.send("Welcome to patient page")
 })
 
 
