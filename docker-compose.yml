@@ -1,8 +1,11 @@
-version: '3'
+
+
+version: '3.8'
 services:
-app:
-container_name: myapp_docker
-restart: always
-build: .
-ports:
-- '80 : 3000'
+apollo:
+  image: quay.io/gmod/docker-apollo:apollo-only
+  restart: always
+  links:
+    - apollo_db
+  ports:
+    - "8888:8080"
